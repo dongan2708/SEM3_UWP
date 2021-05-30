@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Lab03.Pages.Menus.AddContact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab03.Pages.Menus"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="BurlyWood">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Add New Contact" Style="{ThemeResource HeaderTextBlockStyle}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <RelativePanel Grid.Column="1">
+                <!--<Border x:Name="headerText" Width="500" Height="50" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,50,0,0">
+                    <TextBlock Text="SEND EMAIL" FontSize="40px" FontWeight="SemiBold" HorizontalTextAlignment="Center" VerticalAlignment="Center" />
+                </Border>-->
+                <TextBlock x:Name="txtInputName" Text="Enter your name: " FontSize="26px" Margin="50,0,0,0" FontWeight="SemiBold" HorizontalTextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="inputName"  Width="400" Height="50" RelativePanel.Below="txtInputName" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-60,10,0,0" PlaceholderText="Name" FontSize="20px" TextWrapping="Wrap" />
+
+                <TextBlock x:Name="txtInputAge" RelativePanel.Below="inputName" Text="Enter your age: " FontSize="26px" Margin="50,20,0,0" FontWeight="SemiBold" HorizontalTextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="inputAge" Width="400" Height="50" RelativePanel.Below="txtInputAge" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="-60,10,0,0" PlaceholderText="Age" FontSize="20px" TextWrapping="Wrap" />
+
+                <TextBlock x:Name="txtInputAddress" RelativePanel.Below="inputAge" Text="Enter your address: " FontSize="26px" Margin="50,20,0,0" FontWeight="SemiBold" HorizontalTextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="inputAddress" Width="400" Height="50" RelativePanel.Below="txtInputAddress" RelativePanel.AlignHorizontalCenterWithPanel="True" PlaceholderText="Address" Margin="-60,10,0,0" FontSize="20px" TextWrapping="Wrap" />
+                <Button Click="Button_Click" Content="Gửi" Width="150" RelativePanel.Below="inputAddress" Margin="50,50,0,0"  FontWeight="SemiBold" FontSize="20px" FontFamily="Segoe UI Black" />
+                <TextBlock x:Name="successText" FontSize="30" Foreground="ForestGreen" RelativePanel.Below="inputAddress" Margin="50,125,0,0" Text="" FontFamily="Global Monospace" TextWrapping="Wrap"/>
+            </RelativePanel>
+            <RelativePanel Grid.Column="0">
+                <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="20">
+                    <Button FontSize="40" Click="BackButton" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="&#xE72B;" Background="{x:Null}"/>
+                    <TextBlock Text="Go Back" Style="{StaticResource SubheaderTextBlockStyle}" Margin="10,10"/>
+                </StackPanel>
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>
